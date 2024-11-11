@@ -28,11 +28,11 @@ class QuotesSpider(scrapy.Spider):
             }
 #            relative_url = response.xpath('//li[contains(@class, "next")]/a/@href').get()
 
-            if relative_url:
+        if relative_url:
 
-                next_page_url = "https://quotes.toscrape.com" + relative_url
-                yield response.follow(next_page_url, callback=self.parse)
-            else:
-                ("No more Page!")
+            next_page_url = "https://quotes.toscrape.com" + relative_url
+            yield response.follow(next_page_url, callback=self.parse)
+        else:
+            ("No more Page!")
 
 
