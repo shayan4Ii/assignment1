@@ -33,6 +33,6 @@ class QuotesSpider(scrapy.Spider):
             next_page_url = "https://quotes.toscrape.com" + relative_url
             yield response.follow(next_page_url, callback=self.parse)
         else:
-            ("No more Page!")
+            print("No more Page!")
 
 
